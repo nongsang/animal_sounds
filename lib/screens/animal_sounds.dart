@@ -57,14 +57,111 @@ class AnimalSounds extends StatelessWidget {
           child: Lottie.asset("$assetsPath${lottiesPath}cat.json"),
         ),
       ),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Row(children: [Column(), Column()]),
-          Row(children: [Column(), Column()]),
-          Row(children: [Column(), Column()]),
-        ],
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    Image.asset(list[0].imageAssetPath, height: 100),
+                    Padding(
+                      padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
+                      child: Container(
+                        width: 115,
+                        height: 2,
+                        color: Colors.green,
+                      ),
+                    ),
+                    Text(list[0].name, style: TextStyle(fontSize: 20)),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Image.asset(list[1].imageAssetPath, height: 100),
+                    Padding(
+                      padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
+                      child: Container(
+                        width: 115,
+                        height: 2,
+                        color: Colors.green,
+                      ),
+                    ),
+                    Text(list[1].name, style: TextStyle(fontSize: 20)),
+                  ],
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    Image.asset(list[2].imageAssetPath, height: 100),
+                    Padding(
+                      padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
+                      child: Container(
+                        width: 115,
+                        height: 2,
+                        color: Colors.green,
+                      ),
+                    ),
+                    Text(list[2].name, style: TextStyle(fontSize: 20)),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Image.asset(list[3].imageAssetPath, height: 100),
+                    Padding(
+                      padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
+                      child: Container(
+                        width: 115,
+                        height: 2,
+                        color: Colors.green,
+                      ),
+                    ),
+                    Text(list[3].name, style: TextStyle(fontSize: 20)),
+                  ],
+                ),
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                Column(
+                  children: [
+                    Image.asset(list[4].imageAssetPath, height: 100),
+                    Padding(
+                      padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
+                      child: Container(
+                        width: 115,
+                        height: 2,
+                        color: Colors.green,
+                      ),
+                    ),
+                    Text(list[4].name, style: TextStyle(fontSize: 20)),
+                  ],
+                ),
+                Column(
+                  children: [
+                    Image.asset(list[5].imageAssetPath, height: 100),
+                    Padding(
+                      padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
+                      child: Container(
+                        width: 115,
+                        height: 2,
+                        color: Colors.green,
+                      ),
+                    ),
+                    Text(list[5].name, style: TextStyle(fontSize: 20)),
+                  ],
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
