@@ -1,3 +1,4 @@
+import 'package:animal_sounds/common_widgets/animal_row_widget.dart';
 import 'package:animal_sounds/models/animal_infomation.dart';
 import 'package:animal_sounds/services/audio_player_service.dart';
 import 'package:flutter/material.dart';
@@ -64,134 +65,26 @@ class AnimalSounds extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: [
-                    GestureDetector(
-                      onTap: () => {
-                        _audioPlayerService.playSound(list[0].pathSoundAsset),
-                      },
-                      child: Image.asset(list[0].pathImageAsset, height: 100),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
-                      child: Container(
-                        width: 115,
-                        height: 2,
-                        color: Colors.green,
-                      ),
-                    ),
-                    Text(list[0].name, style: TextStyle(fontSize: 20)),
-                  ],
-                ),
-                Column(
-                  children: [
-                    GestureDetector(
-                      onTap: () => {
-                        _audioPlayerService.playSound(list[1].pathSoundAsset),
-                      },
-                      child: Image.asset(list[1].pathImageAsset, height: 100),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
-                      child: Container(
-                        width: 115,
-                        height: 2,
-                        color: Colors.green,
-                      ),
-                    ),
-                    Text(list[1].name, style: TextStyle(fontSize: 20)),
-                  ],
-                ),
-              ],
+            AnimalRowWidget(
+              firstAnimalInfomation: list[0],
+              secondAnimalInfomation: list[1],
+              onCardTap: (animalInfomation) => {
+                _audioPlayerService.playSound(animalInfomation.pathSoundAsset),
+              },
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: [
-                    GestureDetector(
-                      onTap: () => {
-                        _audioPlayerService.playSound(list[2].pathSoundAsset),
-                      },
-                      child: Image.asset(list[2].pathImageAsset, height: 100),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
-                      child: Container(
-                        width: 115,
-                        height: 2,
-                        color: Colors.green,
-                      ),
-                    ),
-                    Text(list[2].name, style: TextStyle(fontSize: 20)),
-                  ],
-                ),
-                Column(
-                  children: [
-                    GestureDetector(
-                      onTap: () => {
-                        _audioPlayerService.playSound(list[3].pathSoundAsset),
-                      },
-                      child: Image.asset(list[3].pathImageAsset, height: 100),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
-                      child: Container(
-                        width: 115,
-                        height: 2,
-                        color: Colors.green,
-                      ),
-                    ),
-                    Text(list[3].name, style: TextStyle(fontSize: 20)),
-                  ],
-                ),
-              ],
+            AnimalRowWidget(
+              firstAnimalInfomation: list[2],
+              secondAnimalInfomation: list[3],
+              onCardTap: (animalInfomation) => {
+                _audioPlayerService.playSound(animalInfomation.pathSoundAsset),
+              },
             ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Column(
-                  children: [
-                    GestureDetector(
-                      onTap: () => {
-                        _audioPlayerService.playSound(list[4].pathSoundAsset),
-                      },
-                      child: Image.asset(list[4].pathImageAsset, height: 100),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
-                      child: Container(
-                        width: 115,
-                        height: 2,
-                        color: Colors.green,
-                      ),
-                    ),
-                    Text(list[4].name, style: TextStyle(fontSize: 20)),
-                  ],
-                ),
-                Column(
-                  children: [
-                    GestureDetector(
-                      onTap: () => {
-                        _audioPlayerService.playSound(list[5].pathSoundAsset),
-                      },
-                      child: Image.asset(list[5].pathImageAsset, height: 100),
-                    ),
-                    Padding(
-                      padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
-                      child: Container(
-                        width: 115,
-                        height: 2,
-                        color: Colors.green,
-                      ),
-                    ),
-                    Text(list[5].name, style: TextStyle(fontSize: 20)),
-                  ],
-                ),
-              ],
+            AnimalRowWidget(
+              firstAnimalInfomation: list[4],
+              secondAnimalInfomation: list[5],
+              onCardTap: (animalInfomation) => {
+                _audioPlayerService.playSound(animalInfomation.pathSoundAsset),
+              },
             ),
           ],
         ),
