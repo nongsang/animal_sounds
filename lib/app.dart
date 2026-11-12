@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Aniaml Sounds',
       theme: ThemeData(colorSchemeSeed: Colors.blue),
-      home: const AnimalSounds(title: 'Aniaml Sounds'),
+      home: AnimalSounds(title: 'Aniaml Sounds'),
     );
   }
 }

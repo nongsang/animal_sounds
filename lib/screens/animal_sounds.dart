@@ -1,48 +1,51 @@
 import 'package:animal_sounds/models/animal_infomation.dart';
+import 'package:animal_sounds/services/audio_player_service.dart';
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 
 class AnimalSounds extends StatelessWidget {
-  const AnimalSounds({super.key, required this._title});
+  AnimalSounds({super.key, required this._title});
 
   final String _title;
+
+  final AudioPlayerService _audioPlayerService = AudioPlayerService();
 
   @override
   Widget build(BuildContext context) {
     const String assetsPath = "assets/";
-    const String imagesPath = "images/";
-    const String soundsPath = "sounds/";
-    const String lottiesPath = "lotties/";
+    const String assetsImagesPath = "images/";
+    const String assetsSoundsPath = "sounds/";
+    const String assetsLottiesPath = "lotties/";
     final List<AnimalInfomation> list = [
       AnimalInfomation(
         "Bear",
-        "$assetsPath${soundsPath}bear.wav",
-        "$assetsPath${imagesPath}bear.png",
+        "${assetsSoundsPath}bear.wav",
+        "$assetsPath${assetsImagesPath}bear.png",
       ),
       AnimalInfomation(
         "Fox",
-        "$assetsPath${soundsPath}fox.wav",
-        "$assetsPath${imagesPath}fox.png",
+        "${assetsSoundsPath}fox.wav",
+        "$assetsPath${assetsImagesPath}fox.png",
       ),
       AnimalInfomation(
         "Koala",
-        "$assetsPath${soundsPath}koala.wav",
-        "$assetsPath${imagesPath}koala.png",
+        "${assetsSoundsPath}koala.wav",
+        "$assetsPath${assetsImagesPath}koala.png",
       ),
       AnimalInfomation(
         "Camel",
-        "$assetsPath${soundsPath}camel.wav",
-        "$assetsPath${imagesPath}camel.png",
+        "${assetsSoundsPath}camel.wav",
+        "$assetsPath${assetsImagesPath}camel.png",
       ),
       AnimalInfomation(
         "Lion",
-        "$assetsPath${soundsPath}lion.wav",
-        "$assetsPath${imagesPath}lion.png",
+        "${assetsSoundsPath}lion.wav",
+        "$assetsPath${assetsImagesPath}lion.png",
       ),
       AnimalInfomation(
         "Tiger",
-        "$assetsPath${soundsPath}tiger.wav",
-        "$assetsPath${imagesPath}tiger.png",
+        "${assetsSoundsPath}tiger.wav",
+        "$assetsPath${assetsImagesPath}tiger.png",
       ),
     ];
 
@@ -54,7 +57,7 @@ class AnimalSounds extends StatelessWidget {
         leading: SizedBox(
           height: 50,
           width: 50,
-          child: Lottie.asset("$assetsPath${lottiesPath}cat.json"),
+          child: Lottie.asset("$assetsPath${assetsLottiesPath}cat.json"),
         ),
       ),
       body: SafeArea(
@@ -66,7 +69,12 @@ class AnimalSounds extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Image.asset(list[0].imageAssetPath, height: 100),
+                    GestureDetector(
+                      onTap: () => {
+                        _audioPlayerService.playSound(list[0].pathSoundAsset),
+                      },
+                      child: Image.asset(list[0].pathImageAsset, height: 100),
+                    ),
                     Padding(
                       padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
                       child: Container(
@@ -80,7 +88,12 @@ class AnimalSounds extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    Image.asset(list[1].imageAssetPath, height: 100),
+                    GestureDetector(
+                      onTap: () => {
+                        _audioPlayerService.playSound(list[1].pathSoundAsset),
+                      },
+                      child: Image.asset(list[1].pathImageAsset, height: 100),
+                    ),
                     Padding(
                       padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
                       child: Container(
@@ -99,7 +112,12 @@ class AnimalSounds extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Image.asset(list[2].imageAssetPath, height: 100),
+                    GestureDetector(
+                      onTap: () => {
+                        _audioPlayerService.playSound(list[2].pathSoundAsset),
+                      },
+                      child: Image.asset(list[2].pathImageAsset, height: 100),
+                    ),
                     Padding(
                       padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
                       child: Container(
@@ -113,7 +131,12 @@ class AnimalSounds extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    Image.asset(list[3].imageAssetPath, height: 100),
+                    GestureDetector(
+                      onTap: () => {
+                        _audioPlayerService.playSound(list[3].pathSoundAsset),
+                      },
+                      child: Image.asset(list[3].pathImageAsset, height: 100),
+                    ),
                     Padding(
                       padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
                       child: Container(
@@ -132,7 +155,12 @@ class AnimalSounds extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Image.asset(list[4].imageAssetPath, height: 100),
+                    GestureDetector(
+                      onTap: () => {
+                        _audioPlayerService.playSound(list[4].pathSoundAsset),
+                      },
+                      child: Image.asset(list[4].pathImageAsset, height: 100),
+                    ),
                     Padding(
                       padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
                       child: Container(
@@ -146,7 +174,12 @@ class AnimalSounds extends StatelessWidget {
                 ),
                 Column(
                   children: [
-                    Image.asset(list[5].imageAssetPath, height: 100),
+                    GestureDetector(
+                      onTap: () => {
+                        _audioPlayerService.playSound(list[5].pathSoundAsset),
+                      },
+                      child: Image.asset(list[5].pathImageAsset, height: 100),
+                    ),
                     Padding(
                       padding: EdgeInsetsGeometry.only(top: 10, bottom: 10),
                       child: Container(

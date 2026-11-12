@@ -1,9 +1,9 @@
 class AnimalInfomation(
   final String _name,
-  final String _soundAssetPath,
-  final String _imageAssetPath,
+  final String _pathSoundAsset,
+  final String _pathImageAsset,
 ) {
   String get name => _name;
-  String get soundAssetPath => _soundAssetPath;
-  String get imageAssetPath => _imageAssetPath;
+  String get pathSoundAsset => _pathSoundAsset;
+  String get pathImageAsset => _pathImageAsset;
 }
